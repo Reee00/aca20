@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Card</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+        .background-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 100px;
+            font-family: 'Great Vibes', cursive;
+            background: linear-gradient(45deg, #ff6b81, #ff9f43, #ff6b81);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 5px 5px 15px rgba(255, 105, 180, 0.8);
+            user-select: none;
+            z-index: -1;
+            animation: glow 2s infinite alternate, moveText 6s infinite ease-in-out;
+        }
+        
+        /* Efek glow berkedip */
+        @keyframes glow {
+            0% {
+                text-shadow: 5px 5px 15px rgba(255, 105, 180, 0.5);
+            }
+            100% {
+                text-shadow: 10px 10px 30px rgba(255, 105, 180, 1);
+            }
+        }
+        
+        /* Gerakan naik-turun */
+        @keyframes moveText {
+            0% { transform: translate(-50%, -50%) translateY(0); }
+            50% { transform: translate(-50%, -50%) translateY(-20px); }
+            100% { transform: translate(-50%, -50%) translateY(0); }
+        }        
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8cdda;
+            flex-direction: column;
+        }
+        .hidden {
+            display: none;
+        }
+        .card {
+            width: 350px;
+            height: 500px;
+            background: white;
+            border-radius: 15px;
+            text-align: center;
+            padding: 20px;
+            transform: scale(0);
+            animation: popUp 1s ease-in-out forwards;
+        }
+        @keyframes popUp {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+        .slideshow-container {
+            width: 100%;
+            height: 250px;
+            margin-top: 20px;
+        }
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .active {
+            display: block;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            background: #ff4b5c;
+            color: white;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #e84352;
+        }
+        .love-buttons {
+            margin-top: 20px;
+        }
+        .yes-btn, .no-btn {
+            padding: 10px 15px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        .yes-btn { background: green; color: white; }
+        .no-btn { background: red; color: white; }
+        .love-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            margin-top: 10px;
+            border-radius: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-text">20 Years<ol>Aca B'Day</ol></div>
+    <button class="btn" onclick="showCard()">Click Me 🎁</button>
+    <div class="card hidden" id="birthdayCard">
+        <h1>🎉 Happy Birthday! 🎂</h1>
+        <p>Wishing you a day filled with love and joy! 💖</p>
+        <div class="slideshow-container">
+            <div class="slide active"><img src="photo1.jpg" alt="Memory 1"></div>
+            <div class="slide"><img src="photo2.jpg" alt="Memory 2"></div>
+            <div class="slide"><img src="photo3.jpg" alt="Memory 3"></div>
+            <div class="slide"><img src="photo4.jpg" alt="Memory 3"></div>
+            <div class="slide"><img src="photo5.jpg" alt="Memory 3"></div>
+            <div class="slide"><img src="photo7.jpg" alt="Memory 3"></div>
+            <div class="slide"><img src="photo8.webp" alt="Memory 3"></div>
+            <div class="slide"><img src="photo9.webp" alt="Memory 3"></div>
+            <div class="slide"><img src="photo10.jpg" alt="Memory 2"></div>
+            <div class="slide"><img src="photo11.webp" alt="Memory 3"></div>
+            <div class="slide"><img src="photo12.webp" alt="Memory 3"></div>
+            <div class="slide"><img src="photo13.webp" alt="Memory 3"></div>
+            <div class="slide"><img src="photo14.webp" alt="Memory 3"></div>
+            <div class="slide"><img src="photo15.webp" alt="Memory 3"></div>
+            <div class="slide"><img src="photo16.jpg" alt="Memory 3"></div>
+            <div class="slide"><img src="photo17.webp" alt="Memory 3"></div>
+            <div class="slide"><img src="photo18.jpg" alt="Memory 2"></div>
+            <div class="slide"><img src="photo19.jpg" alt="Memory 3"></div>
+            <div class="slide"><img src="photo20.jpg" alt="Memory 3"></div>
+            <div class="slide"><img src="photo21.jpg" alt="Memory 3"></div>
+            <div class="slide"><img src="huhu.jpeg" alt="Memory 3"></div>
+            <div class="slide"><img src="hehe.jpg" alt="Memory 3"></div>
+
+        </div>
+        <div class="love-buttons">
+            <p>Do you love me?</p>
+            <button class="yes-btn" onclick="loveResponse('yes')">Yes</button>
+            <button class="no-btn" onclick="loveResponse('no')">No</button>
+        </div>
+        <img id="loveImage" class="love-image" src="" alt="Love Image">
+    </div>
+    <audio id="birthdaySong" src="birthday_song.mp3"></audio>
+    <script>
+        let slideIndex = 0;
+        let slides = document.querySelectorAll(".slide");
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.display = i === index ? "block" : "none";
+            });
+        }
+        function showCard() {
+            document.getElementById("birthdayCard").classList.remove("hidden");
+            document.querySelector(".btn").classList.add("hidden");
+            document.getElementById("birthdaySong").play();
+            setInterval(() => {
+                slideIndex = (slideIndex + 1) % slides.length;
+                showSlide(slideIndex);
+            }, 1500);
+        }
+        function loveResponse(response) {
+            let loveImage = document.getElementById("loveImage");
+        
+            // Tampilkan gambar sesuai jawaban
+            if (response === 'yes') {
+                loveImage.src = "hehe.jpg";
+            } else {
+                loveImage.src = "huhu.jpeg";
+            }
+            loveImage.style.display = "block";
+        
+            // Kirim data ke Google Sheets
+            fetch("AKfycbywsCZOn3ivx2q5m9IWzVZ34FH9Tc-dd5PkY8gQn4-urDQzBbgOZQKY9DkYCDk3gvdA7g" + response)
+                .then(response => console.log("Response sent to Google Sheets"))
+                .catch(error => console.error("Error:", error));
+        }
+        
+    </script>
+</body>
+</html>
