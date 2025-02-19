@@ -128,11 +128,11 @@
     </style>
 </head>
 <body>
-    <div class="background-text">"Siannn Birthday 20 Years"</div>
+    <div class="background-text">20 Years<ol>Aca B'Day</ol></div>
     <button class="btn" onclick="showCard()">Click Me 🎁</button>
     <div class="card hidden" id="birthdayCard">
         <h1>🎉 Happy Birthday! 🎂</h1>
-        <p>Wishing you a day filled with love and joy! 💖may you become even wealthier but maintain your worship♥️</p>
+        <p>Wishing you a day filled with love and joy! 💖</p>
         <div class="slideshow-container">
             <div class="slide active"><img src="photo1.jpg" alt="Memory 1"></div>
             <div class="slide"><img src="photo2.jpg" alt="Memory 2"></div>
@@ -185,16 +185,13 @@
         }
         function loveResponse(response) {
             let loveImage = document.getElementById("loveImage");
-        
-            // Tampilkan gambar sesuai jawaban
             if (response === 'yes') {
                 loveImage.src = "huhu.jpeg";
             } else {
                 loveImage.src = "hehe.jpg";
             }
             loveImage.style.display = "block";
-        
-        
+        }
     </script>
 </body>
 </html>
