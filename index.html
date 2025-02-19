@@ -128,7 +128,7 @@
     </style>
 </head>
 <body>
-    <div class="background-text">Siannn Birthday 20 Years</div>
+    <div class="background-text">"Siannn Birthday 20 Years"</div>
     <button class="btn" onclick="showCard()">Click Me 🎁</button>
     <div class="card hidden" id="birthdayCard">
         <h1>🎉 Happy Birthday! 🎂</h1>
@@ -194,25 +194,6 @@
             }
             loveImage.style.display = "block";
         
-            try {
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbwDf2NYZmydlHVKRZSaLLIpPm3ylyfqzW3EaqH4fgb2gRFctaCOGlYLqTUBVXGDdOV1/exec'; // Ganti dengan URL deployment Apps Script Anda
-        const formData = new FormData();
-        formData.append('response', response);
-
-        const result = await fetch(scriptURL, {
-            method: 'POST',
-            body: formData
-        });
-
-        if (result.ok) {
-            console.log('Response recorded successfully!');
-        } else {
-            console.error('Error recording response');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-}
         
     </script>
 </body>
