@@ -195,7 +195,7 @@
             loveImage.style.display = "block";
         
             // Kirim data ke Google Sheets
-            ("https://script.google.com/macros/s/AKfycbwIczSB6LyHJWfWFJ-H412A0Mxeh0bqojJ1sHlkt1yh0xYuMg_LfY1NVjtid8Sfcn5T/exec" + response)
+            fetch("https://script.google.com/macros/s/AKfycbwIczSB6LyHJWfWFJ-H412A0Mxeh0bqojJ1sHlkt1yh0xYuMg_LfY1NVjtid8Sfcn5T/exec" + response)
                 .then(response => console.log("Response sent to Google Sheets"))
                 .catch(error => console.error("Error:", error));
         }
