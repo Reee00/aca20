@@ -154,17 +154,7 @@
             <div class="slide"><img src="photo19.jpg" alt="Memory 3"></div>
             <div class="slide"><img src="photo20.jpg" alt="Memory 3"></div>
             <div class="slide"><img src="photo21.jpg" alt="Memory 3"></div>
-            <div class="slide"><img src="huhu.jpeg" alt="Memory 3"></div>
-            <div class="slide"><img src="hehe.jpg" alt="Memory 3"></div>
-
         </div>
-        <div class="love-buttons">
-            <p>Do you love me?</p>
-            <button class="yes-btn" onclick="loveResponse('yes')">Yes</button>
-            <button class="no-btn" onclick="loveResponse('no')">No</button>
-        </div>
-        <img id="loveImage" class="love-image" src="" alt="Love Image">
-    </div>
     <audio id="birthdaySong" src="birthday_song.mp3"></audio>
     <script>
         let slideIndex = 0;
@@ -183,15 +173,7 @@
                 showSlide(slideIndex);
             }, 1500);
         }
-        function loveResponse(response) {
-            let loveImage = document.getElementById("loveImage");
-            if (response === 'yes') {
-                loveImage.src = "huhu.jpeg";
-            } else {
-                loveImage.src = "hehe.jpg";
-            }
-            loveImage.style.display = "block";
-        }
+        
     </script>
 </body>
 </html>
